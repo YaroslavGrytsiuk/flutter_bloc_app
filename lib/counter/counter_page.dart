@@ -37,16 +37,23 @@ class _CounterPageState extends State<CounterPage> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
+            heroTag: const Key('counterPage_increment_floatingActionButton'),
             onPressed: () => counterBloc.add(CounterIncrementEvent()),
             tooltip: 'Increment',
             child: const Icon(Icons.add),
           ),
           FloatingActionButton(
+            heroTag: const Key('counterPage_decrement_floatingActionButton'),
             onPressed: () => counterBloc.add(CounterDecrementEvent()),
             tooltip: 'Decrement',
             child: const Icon(Icons.remove),
           ),
-          FloatingActionButton(onPressed: () => counterBloc.add(CounterResetEvent()), tooltip: 'Reset', child: const Icon(Icons.refresh)),
+          FloatingActionButton(
+            heroTag: const Key('counterPage_reset_floatingActionButton'),
+            onPressed: () => counterBloc.add(CounterResetEvent()),
+            tooltip: 'Reset',
+            child: const Icon(Icons.refresh),
+          ),
         ],
       ),
     );
