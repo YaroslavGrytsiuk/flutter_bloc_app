@@ -4,6 +4,7 @@ import 'package:flutter_bloc_app/counter/bloc/counter_bloc.dart';
 import 'package:flutter_bloc_app/counter/counter_page.dart';
 import 'package:flutter_bloc_app/picsum/bloc/picsum_list_bloc.dart';
 import 'package:flutter_bloc_app/picsum/picsum_list_page.dart';
+import 'package:flutter_bloc_app/hogwarts/hogwarts_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -65,6 +66,17 @@ class HomePage extends StatelessWidget {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => const PicsumListPage()));
                 },
                 child: const Text('Picsum Photos'),
+              ),
+            ),
+            const SizedBox(height: 16),
+            SizedBox(
+              width: 200,
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const HogwartsPage()));
+                },
+                icon: const Icon(Icons.school),
+                label: const Text('Go to Hogwarts'),
               ),
             ),
           ],
